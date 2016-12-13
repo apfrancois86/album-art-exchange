@@ -16,9 +16,6 @@ body {
     padding: 0 10px;
     // height: 30px;
   }
-  img:nth-of-type(4) {
-    // height: 20px;
-  }
   div {
     display: flex;
     height: 35px;
@@ -54,6 +51,10 @@ body {
   justify-content: space-around;
   align-items: center;
   width:1300px;
+  @media (max-width:945px) {
+    justify-content: space-between;
+    margin: 0 30px;
+  }
 }
 .container {
   @extend %container;
@@ -62,7 +63,6 @@ body {
   div {
     width: 280px;
     margin: 20px auto;
-
     img {
       @include resizeimage;
       margin-bottom: 20px;
@@ -73,11 +73,20 @@ body {
   @extend %container;
   background-color: $wild-sand;
   height: 100px;
+  @media (max-width:625px) {
+    height: 150px;
+  }
   .searchbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width:625px) {
+      height: 150px;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
     .left-search{
       display: flex;
       justify-content: flex-start;
@@ -154,6 +163,47 @@ body {
     }
   }
 }
+.lower-search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    div:first-of-type {
+      @include search(150px, 40px);
+      justify-content: space-between;
+    }
+    div:nth-of-type(2) {
+      @include search(50px, 40px);
+      border-radius: 50%;
+      padding: 5px;
+      background-color: white;
+      justify-content: center;
+      margin-right: 5px;
+      border: 1px solid $smokestack;
+
+    }
+    div:nth-of-type(3) {
+      @include search(100px, 40px);
+      background-color: white;
+      border-radius: 40px;
+      justify-content: space-around;
+      margin-right: 5px;
+      color: $dimgrey;
+      border: 1px solid $smokestack;
+
+    }
+    div:nth-of-type(4) {
+      @include search(50px, 40px);
+      border-radius: 50%;
+      padding: 5px;
+      background-color: white;
+      justify-content: center;
+      margin-right: 5px;
+      border: 1px solid $smokestack;
+
+    }
+  }
+
+
 
 // @media and screen (max-width: 350px) {
 // }
