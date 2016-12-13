@@ -59,9 +59,14 @@ body {
   @extend %container;
   flex-wrap: wrap;
   align-items: center;
-  img {
-  @include resizeimage;
-  margin: 20px auto;
+  div {
+    width: 280px;
+    margin: 20px auto;
+
+    img {
+      @include resizeimage;
+      margin-bottom: 20px;
+    }
   }
 }
 .search-container {
@@ -82,6 +87,9 @@ body {
         background-color: $smokestack;
         justify-content: space-between;
         border-radius: 5px 0px 0px 5px;
+        @media (max-width:625px) {
+          display: none;
+        }
       }
       div:nth-of-type(2) {
         @include search(250px);
@@ -102,6 +110,9 @@ body {
         justify-content: center;
         font-size: 14px;
         text-transform: uppercase;
+        @media (max-width:945px) {
+          display: none;
+        }
       }
     }
     .right-search {
@@ -111,6 +122,9 @@ body {
       div:first-of-type {
         @include search(150px, 40px);
         justify-content: space-between;
+        @media (max-width:945px) {
+          display: none;
+        }
       }
       div:nth-of-type(2) {
         @include search(50px, 40px);
